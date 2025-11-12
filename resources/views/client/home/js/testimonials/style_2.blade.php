@@ -1,5 +1,5 @@
 <script>
-        const swiper = new Swiper('.swiper', {
+        const swipertestimonials = new Swiper('.swiper-testimonials', {
             direction: 'horizontal',
             loop: true,
 

@@ -14,6 +14,11 @@ class Testimonial extends Model
 
     protected $guarded = ['id', 'created_by', 'updated_by', 'created_at', 'updated_at', 'deleted_at'];
 
+    public function mediat(): BelongsTo 
+    {
+        return $this->belongsTo(Media::class,'featured_image_id');
+    }
+
     public function video(): BelongsTo
     {
         return $this->belongsTo(Media::class, 'video_link_id');

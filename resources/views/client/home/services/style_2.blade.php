@@ -13,13 +13,13 @@
         <div class="px-[15px]">
             <div class="max-w-[1280px] w-full  mx-auto">
                 <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-x-[26px] gap-y-[40px]">
-                    @foreach ($obj->content['Service_listing_id']->list as $item )
+                    @foreach ($services as $item )
                     <div data-aos="fade-up">
                         <div class="product-md-list  rounded-[5px] overflow-hidden bg-zinc-100">
                             <div class="w-full h-[337px] mb-[24px] overflow-hidden group"><img alt="Product"
                                     loading="lazy" width="458" height="226" decoding="async" data-nimg="1"
                                     class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-                                    style="color:transparent" srcset="" src="{{ optional($item->media)->file_path}}">
+                                    style="color:transparent" srcset="" src="{{ optional($item->banner)->file_path}}">
                             </div>
                             <div class="p-[20px]"><a class="flex items-center justify-between gap-[30px]">
                                     <div>

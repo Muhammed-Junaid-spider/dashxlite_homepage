@@ -96,12 +96,12 @@
                                                                 </select>
                                                             </div>
                                                             @endfieldshow
-                                                            @fieldshow(services-short_description)
+                                                            
                                                             <div class="form-group col-md-12">
                                                                 <label>Short Description</label>
                                                                 <textarea name="short_description" class="form-control" rows="2" id="short_description">{{$obj->short_description}}</textarea>
                                                             </div>
-                                                            @endfieldshow
+                                                            
                                                             @fieldshow(services-content)
                                                                 @if(!config('admin.services.sections'))
                                                                 <div class="form-group col-md-12">

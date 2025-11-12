@@ -90,6 +90,10 @@
                                                                 <label>Designation</label>
                                                                 <textarea class="form-control" name="designation">{{$obj->designation}}</textarea>
                                                             </div>
+                                                             {{-- <div class="form-group col-md-12">
+                                                                <label>rating</label>
+                                                                <input type="text" name="rating" class="form-control" value="{{$obj->rating}}">
+                                                            </div> --}}
                                                             <div class="form-group col-md-12">
                                                                 <label>Type</label>
                                                                 <select name="comment_type" class="w-100 webadmin-select2-input" id="type-select">

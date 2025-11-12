@@ -17,13 +17,14 @@
                         class="grid grid-cols-2 md:grid-cols-3 gap-x-[20px] lg:gap-x-[30px] gap-y-[35px] lg:gap-y-[67px]">
                         
                         
-                        @foreach ($obj->content['Service_listing_id']->list as $item )
+                        @foreach ($services as $item )
+                       
                         
                             <div class="product-sm-list">
                                 <div class="w-full h-[226px] mb-[13px] overflow-hidden group"><img alt="Product"
                                         loading="lazy" width="458" height="226" decoding="async" data-nimg="1"
                                         class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-                                        style="color:transparent" srcset="" src="{{ optional($item->media)->file_path}}">
+                                        style="color:transparent" srcset="" src="{{ optional($item->banner)->file_path}}">
                                 </div><a class="flex items-center justify-between gap-[15px]">
                                     <h4>{{ $item->title }}</h4><svg xmlns="http://www.w3.org/2000/svg" width="15"
                                         height="9" viewBox="0 0 15 9" fill="none">

@@ -35,16 +35,16 @@
                                         fill="#060606"></path>
                                 </svg></div>
                         </div>
-                        <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+                        <div class="swiper swiper-services swiper-initialized swiper-horizontal swiper-backface-hidden">
                             <div class="swiper-wrapper">
-                                @foreach ($obj->content['Service_listing_id']->list as $item )
+                                @foreach ($services as $item )
                                 <div class="swiper-slide swiper-slide-next" style="width: 345px; margin-right: 30px;">
                                     <div style="opacity: 1; transform: none;">
                                         <div class="plroduct-slider-block-item">
                                             <div class="product-slider-item-img"><img alt="Product" loading="lazy"
                                                     width="526" height="390" decoding="async" data-nimg="1"
                                                     class="w-full" style="color:transparent" srcset=""
-                                                    src="{{ optional($item->media)->file_path }}">
+                                                    src="{{ optional($item->banner)->file_path}}">
                                             </div>
                                             <div class="flex gap-[25px] justify-between mt-4">
                                                 <div class="w-[70%]">

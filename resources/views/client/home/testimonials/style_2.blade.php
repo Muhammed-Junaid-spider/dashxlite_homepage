@@ -21,7 +21,7 @@
             </div>
             <div class="max-w-[1280px] w-full  mx-auto">
                 <div class=" testislider-sec ">
-                    <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+                    <div class="swiper swiper-testimonials swiper-initialized swiper-horizontal swiper-backface-hidden">
                         <div class="swiper-wrapper">
                             @foreach ( $testimonials as $item )
                                 
@@ -57,127 +57,14 @@
                                                     decoding="async" data-nimg="1"
                                                     class="w-[41px] h-[41px] rounded-[50%] object-cover"
                                                     style="color:transparent" srcset=""
-                                                    src="./images/collection/product2.webp">
+                                                    src="{{ optional($item->mediat)->file_path }}">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             @endforeach
-                            {{-- <div class="swiper-slide swiper-slide-next" style="width: 377px; margin-right: 20px;">
-                                <div data-aos="fade-up">
-                                    <div
-                                        class="test-sec-slider rounded-[12px] overflow-hidden bg-[#fff] p-[30px] h-[450px] flex flex-col justify-between gap-[25px]">
-                                        <div>
-                                            <div class="test-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="110"
-                                                    height="74" viewBox="0 0 110 74" fill="none">
-                                                    <path
-                                                        d="M24.5833 0C17.551 0 11.2913 2.303 6.91733 6.70688C2.53733 11.1169 0.25 17.4073 0.25 24.4878C0.25 31.1211 1.40583 36.4928 4.56917 40.7251C7.0755 44.0694 11.1392 46.0661 15.3367 48.1548C15.3488 54.8739 15.215 57.3913 9.98333 66.6033C7.63517 70.7499 12.3437 75.3008 16.3587 72.7711C28.6713 65.0291 36.7926 59.0511 41.9999 51.6215C47.2133 44.1919 48.9167 35.6353 48.9167 24.4878C48.9167 17.4073 46.6415 11.1169 42.2615 6.70688C37.8815 2.29688 31.6157 0 24.5833 0ZM85.4167 0C78.3843 0 72.1246 2.303 67.7507 6.70688C63.3707 11.1169 61.0833 17.4073 61.0833 24.4878C61.0833 31.1211 62.2392 36.4928 65.4025 40.7251C67.9088 44.0694 71.9725 46.0661 76.17 48.1548C76.1822 54.8739 76.0483 57.3913 70.8167 66.6033C68.4685 70.7499 73.177 75.3008 77.192 72.7711C89.5047 65.0291 97.6259 59.0511 102.833 51.6215C108.047 44.1919 109.75 35.6353 109.75 24.4878C109.75 17.4073 107.475 11.1169 103.095 6.70688C98.7148 2.29688 92.449 0 85.4167 0Z"
-                                                        fill="#CBCFF8"></path>
-                                                </svg> </div>
-                                            <div class="mt-[60px]">
-                                                <p>Visible results within days—my complexion is clearer and brighter
-                                                    Visible results within days—my complexion is clearer and brighter
-                                                    Visible results within days—my complexion is clearer and brighter
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center justify-between gap-[25px]  ">
-                                            <div>
-                                                <h4>Vishnu Parameswar</h4>
-                                                <h5>Happy Customer</h5>
-                                            </div>
-                                            <div class="flex items-center gap-[10px]"><span>4.9</span><svg
-                                                    xmlns="http://www.w3.org/2000/svg" width="14" height="13"
-                                                    viewBox="0 0 14 13" fill="none">
-                                                    <path
-                                                        d="M6.77069 10.4304L3.71858 12.269C3.58375 12.3548 3.44279 12.3916 3.2957 12.3793C3.14861 12.3671 3.01991 12.318 2.90959 12.2322C2.79927 12.1464 2.71347 12.0393 2.65218 11.9108C2.59089 11.7824 2.57864 11.6382 2.61541 11.4784L3.4244 8.0034L0.721629 5.66835C0.599054 5.55804 0.522567 5.43227 0.492169 5.29107C0.46177 5.14986 0.470841 5.01209 0.51938 4.87775C0.56792 4.7434 0.641465 4.63309 0.740015 4.54679C0.838565 4.4605 0.973397 4.40534 1.14451 4.38132L4.71144 4.06875L6.0904 0.796006C6.15169 0.648916 6.24681 0.538598 6.37576 0.465054C6.50471 0.391509 6.63635 0.354736 6.77069 0.354736C6.90504 0.354736 7.03668 0.391509 7.16563 0.465054C7.29458 0.538598 7.3897 0.648916 7.45098 0.796006L8.82995 4.06875L12.3969 4.38132C12.5685 4.40583 12.7033 4.46099 12.8014 4.54679C12.8994 4.6326 12.973 4.74291 13.022 4.87775C13.071 5.01258 13.0804 5.1506 13.05 5.2918C13.0196 5.43301 12.9428 5.55853 12.8198 5.66835L10.117 8.0034L10.926 11.4784C10.9627 11.6377 10.9505 11.7819 10.8892 11.9108C10.8279 12.0398 10.7421 12.1469 10.6318 12.2322C10.5215 12.3175 10.3928 12.3666 10.2457 12.3793C10.0986 12.3921 9.95764 12.3553 9.8228 12.269L6.77069 10.4304Z"
-                                                        fill="#19A473"></path>
-                                                </svg><img alt="Product" loading="lazy" width="458" height="226"
-                                                    decoding="async" data-nimg="1"
-                                                    class="w-[41px] h-[41px] rounded-[50%] object-cover"
-                                                    style="color:transparent" srcset=""
-                                                    src="./images/collection/product2.webp">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="width: 377px; margin-right: 20px;">
-                                <div data-aos="fade-up">
-                                    <div
-                                        class="test-sec-slider rounded-[12px] overflow-hidden bg-[#fff] p-[30px] h-[450px] flex flex-col justify-between gap-[25px]">
-                                        <div>
-                                            <div class="test-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="110"
-                                                    height="74" viewBox="0 0 110 74" fill="none">
-                                                    <path
-                                                        d="M24.5833 0C17.551 0 11.2913 2.303 6.91733 6.70688C2.53733 11.1169 0.25 17.4073 0.25 24.4878C0.25 31.1211 1.40583 36.4928 4.56917 40.7251C7.0755 44.0694 11.1392 46.0661 15.3367 48.1548C15.3488 54.8739 15.215 57.3913 9.98333 66.6033C7.63517 70.7499 12.3437 75.3008 16.3587 72.7711C28.6713 65.0291 36.7926 59.0511 41.9999 51.6215C47.2133 44.1919 48.9167 35.6353 48.9167 24.4878C48.9167 17.4073 46.6415 11.1169 42.2615 6.70688C37.8815 2.29688 31.6157 0 24.5833 0ZM85.4167 0C78.3843 0 72.1246 2.303 67.7507 6.70688C63.3707 11.1169 61.0833 17.4073 61.0833 24.4878C61.0833 31.1211 62.2392 36.4928 65.4025 40.7251C67.9088 44.0694 71.9725 46.0661 76.17 48.1548C76.1822 54.8739 76.0483 57.3913 70.8167 66.6033C68.4685 70.7499 73.177 75.3008 77.192 72.7711C89.5047 65.0291 97.6259 59.0511 102.833 51.6215C108.047 44.1919 109.75 35.6353 109.75 24.4878C109.75 17.4073 107.475 11.1169 103.095 6.70688C98.7148 2.29688 92.449 0 85.4167 0Z"
-                                                        fill="#CBCFF8"></path>
-                                                </svg> </div>
-                                            <div class="mt-[60px]">
-                                                <p>Visible results within days—my complexion is clearer and brighter
-                                                    Visible results within days—my complexion is clearer and brighter
-                                                    Visible results within days—my complexion is clearer and brighter
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center justify-between gap-[25px]  ">
-                                            <div>
-                                                <h4>Vishnu Parameswar</h4>
-                                                <h5>Happy Customer</h5>
-                                            </div>
-                                            <div class="flex items-center gap-[10px]"><span>4.9</span><svg
-                                                    xmlns="http://www.w3.org/2000/svg" width="14" height="13"
-                                                    viewBox="0 0 14 13" fill="none">
-                                                    <path
-                                                        d="M6.77069 10.4304L3.71858 12.269C3.58375 12.3548 3.44279 12.3916 3.2957 12.3793C3.14861 12.3671 3.01991 12.318 2.90959 12.2322C2.79927 12.1464 2.71347 12.0393 2.65218 11.9108C2.59089 11.7824 2.57864 11.6382 2.61541 11.4784L3.4244 8.0034L0.721629 5.66835C0.599054 5.55804 0.522567 5.43227 0.492169 5.29107C0.46177 5.14986 0.470841 5.01209 0.51938 4.87775C0.56792 4.7434 0.641465 4.63309 0.740015 4.54679C0.838565 4.4605 0.973397 4.40534 1.14451 4.38132L4.71144 4.06875L6.0904 0.796006C6.15169 0.648916 6.24681 0.538598 6.37576 0.465054C6.50471 0.391509 6.63635 0.354736 6.77069 0.354736C6.90504 0.354736 7.03668 0.391509 7.16563 0.465054C7.29458 0.538598 7.3897 0.648916 7.45098 0.796006L8.82995 4.06875L12.3969 4.38132C12.5685 4.40583 12.7033 4.46099 12.8014 4.54679C12.8994 4.6326 12.973 4.74291 13.022 4.87775C13.071 5.01258 13.0804 5.1506 13.05 5.2918C13.0196 5.43301 12.9428 5.55853 12.8198 5.66835L10.117 8.0034L10.926 11.4784C10.9627 11.6377 10.9505 11.7819 10.8892 11.9108C10.8279 12.0398 10.7421 12.1469 10.6318 12.2322C10.5215 12.3175 10.3928 12.3666 10.2457 12.3793C10.0986 12.3921 9.95764 12.3553 9.8228 12.269L6.77069 10.4304Z"
-                                                        fill="#19A473"></path>
-                                                </svg><img alt="Product" loading="lazy" width="458" height="226"
-                                                    decoding="async" data-nimg="1"
-                                                    class="w-[41px] h-[41px] rounded-[50%] object-cover"
-                                                    style="color:transparent" srcset=""
-                                                    src="./images/collection/product2.webp">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="width: 377px; margin-right: 20px;">
-                                <div
-                                    class="test-sec-slider rounded-[12px] overflow-hidden bg-[#fff] p-[30px] h-[450px] flex flex-col justify-between gap-[25px]">
-                                    <div>
-                                        <div class="test-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="110"
-                                                height="74" viewBox="0 0 110 74" fill="none">
-                                                <path
-                                                    d="M24.5833 0C17.551 0 11.2913 2.303 6.91733 6.70688C2.53733 11.1169 0.25 17.4073 0.25 24.4878C0.25 31.1211 1.40583 36.4928 4.56917 40.7251C7.0755 44.0694 11.1392 46.0661 15.3367 48.1548C15.3488 54.8739 15.215 57.3913 9.98333 66.6033C7.63517 70.7499 12.3437 75.3008 16.3587 72.7711C28.6713 65.0291 36.7926 59.0511 41.9999 51.6215C47.2133 44.1919 48.9167 35.6353 48.9167 24.4878C48.9167 17.4073 46.6415 11.1169 42.2615 6.70688C37.8815 2.29688 31.6157 0 24.5833 0ZM85.4167 0C78.3843 0 72.1246 2.303 67.7507 6.70688C63.3707 11.1169 61.0833 17.4073 61.0833 24.4878C61.0833 31.1211 62.2392 36.4928 65.4025 40.7251C67.9088 44.0694 71.9725 46.0661 76.17 48.1548C76.1822 54.8739 76.0483 57.3913 70.8167 66.6033C68.4685 70.7499 73.177 75.3008 77.192 72.7711C89.5047 65.0291 97.6259 59.0511 102.833 51.6215C108.047 44.1919 109.75 35.6353 109.75 24.4878C109.75 17.4073 107.475 11.1169 103.095 6.70688C98.7148 2.29688 92.449 0 85.4167 0Z"
-                                                    fill="#CBCFF8"></path>
-                                            </svg> </div>
-                                        <div class="mt-[60px]">
-                                            <p>Visible results within days—my complexion is clearer and brighter Visible
-                                                results within days—my complexion is clearer and brighter Visible
-                                                results within days—my complexion is clearer and brighter</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center justify-between gap-[25px]  ">
-                                        <div>
-                                            <h4>Vishnu Parameswar</h4>
-                                            <h5>Happy Customer</h5>
-                                        </div>
-                                        <div class="flex items-center gap-[10px]"><span>4.9</span><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="14" height="13"
-                                                viewBox="0 0 14 13" fill="none">
-                                                <path
-                                                    d="M6.77069 10.4304L3.71858 12.269C3.58375 12.3548 3.44279 12.3916 3.2957 12.3793C3.14861 12.3671 3.01991 12.318 2.90959 12.2322C2.79927 12.1464 2.71347 12.0393 2.65218 11.9108C2.59089 11.7824 2.57864 11.6382 2.61541 11.4784L3.4244 8.0034L0.721629 5.66835C0.599054 5.55804 0.522567 5.43227 0.492169 5.29107C0.46177 5.14986 0.470841 5.01209 0.51938 4.87775C0.56792 4.7434 0.641465 4.63309 0.740015 4.54679C0.838565 4.4605 0.973397 4.40534 1.14451 4.38132L4.71144 4.06875L6.0904 0.796006C6.15169 0.648916 6.24681 0.538598 6.37576 0.465054C6.50471 0.391509 6.63635 0.354736 6.77069 0.354736C6.90504 0.354736 7.03668 0.391509 7.16563 0.465054C7.29458 0.538598 7.3897 0.648916 7.45098 0.796006L8.82995 4.06875L12.3969 4.38132C12.5685 4.40583 12.7033 4.46099 12.8014 4.54679C12.8994 4.6326 12.973 4.74291 13.022 4.87775C13.071 5.01258 13.0804 5.1506 13.05 5.2918C13.0196 5.43301 12.9428 5.55853 12.8198 5.66835L10.117 8.0034L10.926 11.4784C10.9627 11.6377 10.9505 11.7819 10.8892 11.9108C10.8279 12.0398 10.7421 12.1469 10.6318 12.2322C10.5215 12.3175 10.3928 12.3666 10.2457 12.3793C10.0986 12.3921 9.95764 12.3553 9.8228 12.269L6.77069 10.4304Z"
-                                                    fill="#19A473"></path>
-                                            </svg><img alt="Product" loading="lazy" width="458" height="226"
-                                                decoding="async" data-nimg="1"
-                                                class="w-[41px] h-[41px] rounded-[50%] object-cover"
-                                                style="color:transparent" srcset=""
-                                                src="./images/collection/product2.webp">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
+                          
                         </div>
                     </div>
                     <div class="flex items-center justify-center gap-4 mb-6 mt-[40px]"><button

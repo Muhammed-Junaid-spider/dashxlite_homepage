@@ -95,4 +95,9 @@ class Service extends Model
             }
         return $html;
     }
+
+    public function banner(): BelongsTo
+    {
+        return $this->belongsTo(Media::class, 'banner_image_id');
+    }
 }
