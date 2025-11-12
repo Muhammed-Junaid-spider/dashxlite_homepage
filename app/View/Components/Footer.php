@@ -27,7 +27,6 @@ class Footer extends Component
         $this->settings = Setting::all()->keyBy('code');
         $logoSetting = Setting::where('code', 'logo_small')->first();
         $this->logoPath = $logoSetting?->value_text ?? 'images/default-logo.png';
-
         $footerMenu = Menu::where('position', 'Footer Menu')->where('status', 1)->first();
         $footerQuickLinks = Menu::where('position', 'Footer Quick Links')->where('status', 1)->first();
 
@@ -37,10 +36,10 @@ class Footer extends Component
 
 
         if ($footerMenu) {
-            $this->footerMenuItems = MenuItem::where('menu_id', $footerMenu->id)
-                ->orderBy('id', 'asc')
-                ->select('title', 'url')
-                ->get();
+            $allItems = MenuItem::where('menu_id', $footerMenu->id)
+                ->orderBy('menu_order', 'asc')
+                ->get(['id', 'title', 'url', 'parent_id', 'menu_order']);
+            $this->footerMenuItems = $this->buildMenuTree($allItems);
         } else {
             $this->footerMenuItems = collect();
         }
@@ -53,7 +52,19 @@ class Footer extends Component
         } else {
             $this->quickLinkItems = collect();
         }
+        
 
+        
+
+    }
+    private function buildMenuTree($items, $parentId = 0)
+    {
+        return $items
+            ->where('parent_id', $parentId)
+            ->map(function ($item) use ($items) {
+                $item->setRelation('children', $this->buildMenuTree($items, $item->id));
+                return $item;
+            });
     }
 
     /**
